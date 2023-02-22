@@ -5,6 +5,7 @@
 <script>
 
 export default {
+    // global-component
     name: "GlobalComponent",
     // initial-test
     props: ['initialTest', 'incrementValue'],
