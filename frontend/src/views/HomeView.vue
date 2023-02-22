@@ -4,6 +4,7 @@
       <nav>
         <router-link to="/">Home</router-link> |
         <router-link to="/bind-test">BindTest</router-link> |
+        <router-link to="/click-test">클릭 테스트</router-link> |
       </nav>
       <router-view/>
     </div>
