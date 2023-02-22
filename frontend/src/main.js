@@ -8,6 +8,7 @@ import GlobalComponent from "@/components/lecture/componentTest/GlobalComponent.
 
 Vue.config.productionTip = false
 
+// global-component 커스텀 태그 등록
 Vue.component(GlobalComponent.name, GlobalComponent)
 
 new Vue({

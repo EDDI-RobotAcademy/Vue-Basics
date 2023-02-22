@@ -6,15 +6,17 @@
 
 export default {
     name: "GlobalComponent",
-    props: ['initialTest'],
+    // initial-test
+    props: ['initialTest', 'incrementValue'],
     data () {
         return {
-            counterValue: this.initialTest
+            counterValue: this.initialTest,
+            incValue: this.incrementValue
         }
     },
     methods: {
         addCounter () {
-            this.counterValue += 1
+            this.counterValue += this.incValue
         }
     }
 }
