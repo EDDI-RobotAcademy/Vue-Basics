@@ -28,6 +28,7 @@ export default {
 
             this.$set(this.tableData[this.rowIndex], this.cellIndex, this.currentTurnShape)
 
+            this.$emit('callTest');
             this.changeTurn()
             this.$emit('updateTurnShape', this.game.propsTurnShape)
         },

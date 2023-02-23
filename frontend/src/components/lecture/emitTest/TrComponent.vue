@@ -1,26 +1,19 @@
 <template>
-  <tr>
-    <!-- arr[rowIndex][index]
-
-         rowData    -> arr[0]    ~ arr[4]
-         rowData[0] -> arr[0][0] ~ arr[0][4] -> cellData
-          ...       ->          ...          -> cellData
-         arr[4]     -> arr[4][0] ~ arr[4][4] -> cellData
-    -->
-    <td-component
-        v-for="(cellData, index) in rowData" :key="index"
-        :cell-data="cellData"
-        :cell-index="index"
-        :row-index="rowIndex"
-        :table-data="tableData"
-        :current-turn-shape="currentTurnShape"
-        @updateTurnShape="updateTurnShape"/>
-  </tr>
+    <tr>
+        <td-component
+            v-for="(cellData, index) in rowData" :key="index"
+            :cell-data="cellData"
+            :cell-index="index"
+            :row-index="rowIndex"
+            :table-data="tableData"
+            :current-turn-shape="currentTurnShape"
+            @updateTurnShape="updateTurnShape"/>
+    </tr>
 </template>
 
 <script>
 
-import TdComponent from '@/components/lecture/emitTest/TdComponent.vue'
+import TdComponent from './TdComponent.vue';
 
 export default {
     name: "TrComponent",
@@ -33,17 +26,13 @@ export default {
         tableData: Array,
         currentTurnShape: String,
     },
-    method: {
-        updateTurnShape (receivedTurnShape) {
-            console.log('Tr Component received Td Component info: ' + receivedTurnShape)
-
-            this.turnShape = receivedTurnShape;
+    methods: {
+        updateTurnShape (passingValue) {
+            console.log('TableComponent received TrComponent info: ' + passingValue)
+            this.turnShape = passingValue
             this.$emit('updateTurnShape', this.turnShape)
-        }
+        },
     }
 }
+
 </script>
-
-<style>
-
-</style>

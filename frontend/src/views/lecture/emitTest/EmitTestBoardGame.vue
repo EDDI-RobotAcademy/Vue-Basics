@@ -35,11 +35,10 @@ export default {
         }
     },
     methods: {
-        updateTurnShape (receivedTurnShape) {
-            console.log('Board Game received Table Component info: ' + receivedTurnShape)
-
-            this.currentTurnShape = receivedTurnShape;
-        }
+        updateTurnShape (passingValue) {
+            console.log('SimpleBoardGameView received TableComponent info: ' + passingValue)
+            this.currentTurnShape = passingValue
+        },
     }
 }
 
