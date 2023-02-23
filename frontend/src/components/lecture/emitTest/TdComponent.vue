@@ -26,14 +26,17 @@ export default {
         whichOneSelected () {
             console.log('오목판을 클릭했습니다!')
 
-            this.$set(this.tableData[this.rowIndex], this.cellIndex, this.currentTurnShape)
+            this.setDataToSelectedArray()
 
-            this.$emit('callTest');
             this.changeTurn()
-            this.$emit('updateTurnShape', this.game.propsTurnShape)
+            
         },
         changeTurn () {
             this.game.propsTurnShape = this.currentTurnShape === 'O' ? 'X' : 'O'
+            this.$emit('updateTurnShape', this.game.propsTurnShape)
+        },
+        setDataToSelectedArray () {
+            this.$set(this.tableData[this.rowIndex], this.cellIndex, this.currentTurnShape)
         }
     }
 }
