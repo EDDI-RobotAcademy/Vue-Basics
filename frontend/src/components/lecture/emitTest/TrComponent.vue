@@ -8,6 +8,11 @@
             :table-data="tableData"
             :current-turn-shape="currentTurnShape"
             @updateTurnShape="updateTurnShape"/>
+            <!-- @updateTurnShape은 v-on:updateTurnShape와 동의어
+                 updateTurnShape이라는 이벤트가 발생하면
+                 updateTurnShape 매서드를 동작시키라는 의미
+                 만약 @updateTurnShape="testFunction" 이라면
+                 updateTurnShape 이벤트 발생시 testFunction 매서드 동작 -->
     </tr>
 </template>
 
