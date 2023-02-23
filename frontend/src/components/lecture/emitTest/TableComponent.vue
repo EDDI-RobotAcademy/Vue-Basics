@@ -11,7 +11,8 @@
         :row-data="rowData"
         :row-index="index"
         :tableData="tableData"
-        :current-turn-shape="currentTurnShape"/>
+        :current-turn-shape="currentTurnShape"
+        @updateTurnShape="updateTurnShape"/>
   </table>
 </template>
 
@@ -27,6 +28,14 @@ export default {
     props: {
         tableData: Array,
         currentTurnShape: String,
+    },
+    method: {
+        updateTurnShape (receivedTurnShape) {
+            console.log('Table Component received Tr Component info: ' + receivedTurnShape)
+
+            this.turnShape = receivedTurnShape;
+            this.$emit('updateTurnShape', this.turnShape)
+        }
     }
 }
 

@@ -2,7 +2,8 @@
   <v-container>
     <table-component 
         :table-data="tableData"
-        :current-turn-shape="currentTurnShape"/>
+        :current-turn-shape="currentTurnShape"
+        @updateTurnShape="updateTurnShape"/>
   </v-container>
 </template>
 
@@ -31,6 +32,13 @@ export default {
                 ['', '', '', '', ''],
                 ['', '', '', '', ''],
             ]
+        }
+    },
+    methods: {
+        updateTurnShape (receivedTurnShape) {
+            console.log('Board Game received Table Component info: ' + receivedTurnShape)
+
+            this.currentTurnShape = receivedTurnShape;
         }
     }
 }

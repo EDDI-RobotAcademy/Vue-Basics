@@ -10,7 +10,9 @@ export default {
     name: "TdComponent",
     data () {
         return {
-
+            game: {
+                propsTurnShape: this.currentTurnShape,
+            }
         }
     },
     props: {
@@ -25,6 +27,12 @@ export default {
             console.log('오목판을 클릭했습니다!')
 
             this.$set(this.tableData[this.rowIndex], this.cellIndex, this.currentTurnShape)
+
+            this.changeTurn()
+            this.$emit('updateTurnShape', this.game.propsTurnShape)
+        },
+        changeTurn () {
+            this.game.propsTurnShape = this.currentTurnShape === 'O' ? 'X' : 'O'
         }
     }
 }
