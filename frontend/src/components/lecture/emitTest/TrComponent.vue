@@ -12,7 +12,8 @@
         :cell-data="cellData"
         :cell-index="index"
         :row-index="rowIndex"
-        :table-data="tableData"/>
+        :table-data="tableData"
+        :current-turn-shape="currentTurnShape"/>
   </tr>
 </template>
 
@@ -29,6 +30,7 @@ export default {
         rowData: Array,
         rowIndex: Number,
         tableData: Array,
+        currentTurnShape: String,
     }
 }
 </script>

@@ -10,7 +10,8 @@
         v-for="(rowData, index) in tableData" :key="index"
         :row-data="rowData"
         :row-index="index"
-        :tableData="tableData"/>
+        :tableData="tableData"
+        :current-turn-shape="currentTurnShape"/>
   </table>
 </template>
 
@@ -24,7 +25,8 @@ export default {
         TrComponent
     },
     props: {
-        tableData: Array
+        tableData: Array,
+        currentTurnShape: String,
     }
 }
 
