@@ -18,6 +18,7 @@ export default {
     },
     data () {
         return {
+            // tableData[5][5]
             tableData: [
                 ['', '', '', '', ''],
                 ['', '', '', '', ''],
