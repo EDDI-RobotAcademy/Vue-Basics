@@ -1,11 +1,30 @@
 <template>
-  
+  <table>
+    <!-- tableData -> arr[4][4]
+         rowData   -> arr[0] ~ arr[4]
+         index     -> 0 ~ 4           -->
+    <tr-component
+        v-for="(rowData, index) in tableData" :key="index"
+        :row-data="rowData"
+        :row-index="index"
+        :tableData="tableData"/>
+  </table>
 </template>
 
 <script>
-export default {
 
+import TrComponent from '@/components/lecture/emitTest/TrComponent.vue'
+
+export default {
+    name: "TableComponent",
+    components: {
+        TrComponent
+    },
+    props: {
+        tableData: Array
+    }
 }
+
 </script>
 
 <style>
