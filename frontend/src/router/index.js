@@ -6,6 +6,8 @@ import BindTest from "@/views/lecture/bind/BindTest.vue"
 import ClickEventTest from "@/views/lecture/clickEvent/ClickEventTest.vue"
 import ComponentTest from "@/views/lecture/componentTest/ComponentTest.vue"
 
+import EmitTestBoardGame from "@/views/lecture/emitTest/EmitTestBoardGame.vue"
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -28,6 +30,11 @@ const routes = [
     path: '/component-test',
     name: 'ComponentTest',
     component: ComponentTest
+  },
+  {
+    path: '/emit-test-board-game',
+    name: 'EmitTestBoardGame',
+    component: EmitTestBoardGame
   },
 ]
 
