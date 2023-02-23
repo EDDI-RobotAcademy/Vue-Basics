@@ -32,9 +32,9 @@ export default {
         currentTurnShape: String,
     },
     methods: {
-        updateTurnShape (passingValue) {
-            console.log('TableComponent received TrComponent info: ' + passingValue)
-            this.turnShape = passingValue
+        updateTurnShape (receivedTurnShape) {
+            console.log('TableComponent received TrComponent info: ' + receivedTurnShape)
+            this.turnShape = receivedTurnShape
             this.$emit('updateTurnShape', this.turnShape)
         },
     }
