@@ -27,6 +27,7 @@ export default {
             console.log('오목판을 클릭했습니다!')
 
             this.setDataToSelectedArray()
+            let win = this.winnerCheck()
 
             this.changeTurn()
             
@@ -42,6 +43,43 @@ export default {
             // this.currentTurnShape: 현재 턴('x', 'o')
             // this.$set(행, 열, 값) -> 특정[행][열] = 값
             this.$set(this.tableData[this.rowIndex], this.cellIndex, this.currentTurnShape)
+        },
+        winnerCheck () {
+            if (
+                this.tableData[this.rowIndex][0] === this.currentTurnShape &&
+                this.tableData[this.rowIndex][1] === this.currentTurnShape &&
+                this.tableData[this.rowIndex][2] === this.currentTurnShape &&
+                this.tableData[this.rowIndex][3] === this.currentTurnShape &&
+                this.tableData[this.rowIndex][4] === this.currentTurnShape
+            ) {
+                return true
+            } else if (
+                this.tableData[0][this.cellIndex] === this.currentTurnShape &&
+                this.tableData[1][this.cellIndex] === this.currentTurnShape &&
+                this.tableData[2][this.cellIndex] === this.currentTurnShape &&
+                this.tableData[3][this.cellIndex] === this.currentTurnShape &&
+                this.tableData[4][this.cellIndex] === this.currentTurnShape
+            ) {
+                return true
+            } else if (
+                this.tableData[0][0] === this.currentTurnShape &&
+                this.tableData[1][1] === this.currentTurnShape &&
+                this.tableData[2][2] === this.currentTurnShape &&
+                this.tableData[3][3] === this.currentTurnShape &&
+                this.tableData[4][4] === this.currentTurnShape
+            ) {
+                return true
+            } else if (
+                this.tableData[0][4] === this.currentTurnShape &&
+                this.tableData[1][3] === this.currentTurnShape &&
+                this.tableData[2][2] === this.currentTurnShape &&
+                this.tableData[3][1] === this.currentTurnShape &&
+                this.tableData[4][0] === this.currentTurnShape
+            ) {
+                return true
+            }
+
+            return false
         }
     }
 }
