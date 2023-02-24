@@ -27,7 +27,7 @@ export default {
         whichOneSelected () {
             console.log('오목판을 클릭했습니다!')
 
-            this.setDataToSelectedArray()
+            let isDuplicated = this.setDataToSelectedArray()
             let win = this.winnerCheck()
 
             if (win) {
@@ -49,8 +49,7 @@ export default {
                 if (allCellFull) { this.$emit('updateTableData') }
             }
 
-            this.changeTurn()
-            
+            if (!isDuplicated) { this.changeTurn() }
         },
         changeTurn () {
             this.game.propsTurnShape = this.currentTurnShape === 'O' ? 'X' : 'O'
@@ -62,7 +61,10 @@ export default {
             // this.cellIndex: 사용자가 클릭한 '행'내 열 정보
             // this.currentTurnShape: 현재 턴('x', 'o')
             // this.$set(행, 열, 값) -> 특정[행][열] = 값
+            if (this.tableData[this.rowIndex][this.cellIndex] !== '') { return true }
+
             this.$set(this.tableData[this.rowIndex], this.cellIndex, this.currentTurnShape)
+            return false
         },
         winnerCheck () {
             if (
