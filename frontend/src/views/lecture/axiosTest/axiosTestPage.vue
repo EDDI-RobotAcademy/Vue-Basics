@@ -1,16 +1,17 @@
 <template>
   <v-container>
     <h2>Vue에서 Spring으로 데이터 전송하기</h2>
-    <axios-test-page-form @submit="onSubmit"/>
+    <axios-test-form @submit="onSubmit"/>
   </v-container>
 </template>
 
 <script>
 
+import axios from 'axios'
 import AxiosTestForm from '@/components/lecture/axiosTest/AxiosTestForm.vue'
 
 export default {
-  name: "axiosTestPage",
+  name: "AxiosTestPage",
   components: { AxiosTestForm },
   methods: {
     onSubmit (payload) {

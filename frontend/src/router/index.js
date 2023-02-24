@@ -8,7 +8,7 @@ import ComponentTest from "@/views/lecture/componentTest/ComponentTest.vue"
 
 import EmitTestBoardGame from "@/views/lecture/emitTest/EmitTestBoardGame.vue"
 
-import 
+import AxiosTestPage from "@/views/lecture/axiosTest/AxiosTestPage.vue"
 
 Vue.use(VueRouter)
 
@@ -38,6 +38,12 @@ const routes = [
     name: 'EmitTestBoardGame',
     component: EmitTestBoardGame
   },
+  {
+    path: '/axios-test-page',
+    name: 'AxiosTestPage',
+    component: AxiosTestPage
+  },
+  
 ]
 
 const router = new VueRouter({
