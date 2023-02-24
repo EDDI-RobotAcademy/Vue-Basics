@@ -7,6 +7,7 @@
 
 <script>
 
+// npm install axios --save-dev
 import axios from 'axios'
 import AxiosTestForm from '@/components/lecture/axiosTest/AxiosTestForm.vue'
 
