@@ -38,6 +38,9 @@ export default {
             } else {
                 let allCellFull = true
 
+                // tableData[x][y]
+                // tableData[x] === row
+                // tableData[fixed_x][y] === cell
                 this.tableData.forEach(row => {
                     row.forEach(cell => {
                         if (!cell) {
