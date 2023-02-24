@@ -1,33 +1,34 @@
 <template>
   <v-container>
-    <form @submit.prevent="onSubmit">
-      <table>
-        <tr>
-          <td>이름</td>
-          <td>
-            <input type="text" v-model="memberName"/>
-          </td>
-        </tr>
-
-        <tr>
-          <td>전공</td>
-          <td>
-            <input type="text" v-model="major"/>
-          </td>
-        </tr>
-      </table>
-
-      <div>
-        <button type="submit">전송</button>
-      </div>
-    </form>
+    <h2>Vue에서 Spring으로 데이터 전송하기</h2>
+    <axios-test-page-form @submit="onSubmit"/>
   </v-container>
 </template>
 
 <script>
-export default {
 
+import axiosTestPageForm from '@/components/lecture/axiosTest/axiosTestPageForm.vue'
+
+export default {
+  name: "axiosTestPage",
+  components: { axiosTestPageForm },
+  methods: {
+    onSubmit (payload) {
+        const { memberName, major } = payload
+        axios.post('http://localhost:7777/vue/first/receive-test', 
+            { memberName, major }
+        )
+        .then(() => {
+            alert('데이터 전송 완료!')
+        })
+        .catch(() => {
+            alert('문제 발생!')
+        })
+
+    }
+  }
 }
+
 </script>
 
 <style>
