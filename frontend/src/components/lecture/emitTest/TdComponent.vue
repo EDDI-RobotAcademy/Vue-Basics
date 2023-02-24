@@ -12,6 +12,7 @@ export default {
         return {
             game: {
                 propsTurnShape: this.currentTurnShape,
+                propsWinner: '',
             }
         }
     },
@@ -28,6 +29,12 @@ export default {
 
             this.setDataToSelectedArray()
             let win = this.winnerCheck()
+
+            if (win) {
+                this.game.propsWinner = this.currentTurnShape
+
+                this.$emit('updateWinner', this.game.propsWinner)
+            }
 
             this.changeTurn()
             

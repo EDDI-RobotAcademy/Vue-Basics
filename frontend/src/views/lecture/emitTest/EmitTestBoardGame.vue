@@ -1,9 +1,12 @@
 <template>
   <v-container>
+    <div>{{ currentTurnShape }} 님의 턴입니다.</div>
     <table-component 
         :table-data="tableData"
         :current-turn-shape="currentTurnShape"
-        @updateTurnShape="updateTurnShape"/>
+        @updateTurnShape="updateTurnShape"
+        @updateWinner="updateWinner"/>
+    <div v-if="winner">{{ winner }} 님의 승리!</div>
   </v-container>
 </template>
 
@@ -31,7 +34,8 @@ export default {
                 ['', '', '', '', ''],
                 ['', '', '', '', ''],
                 ['', '', '', '', ''],
-            ]
+            ],
+            winner: '',
         }
     },
     methods: {
@@ -39,6 +43,10 @@ export default {
             console.log('SimpleBoardGameView received TableComponent info: ' + passingValue)
             this.currentTurnShape = passingValue
         },
+        updateWinner (receivedWinner) {
+            console.log("Main Board Game: winner received")
+            this.winner = receivedWinner
+        }
     }
 }
 
