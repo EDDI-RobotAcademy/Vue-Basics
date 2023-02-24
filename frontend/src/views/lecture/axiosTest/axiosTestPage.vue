@@ -7,11 +7,11 @@
 
 <script>
 
-import axiosTestPageForm from '@/components/lecture/axiosTest/axiosTestPageForm.vue'
+import AxiosTestForm from '@/components/lecture/axiosTest/AxiosTestForm.vue'
 
 export default {
   name: "axiosTestPage",
-  components: { axiosTestPageForm },
+  components: { AxiosTestForm },
   methods: {
     onSubmit (payload) {
         const { memberName, major } = payload

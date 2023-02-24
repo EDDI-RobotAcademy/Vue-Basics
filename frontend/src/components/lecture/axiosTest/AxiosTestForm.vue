@@ -25,7 +25,7 @@
 <script>
 
 export default {
-    name: "axiosTestPageForm",
+    name: "AxiosTestForm",
     data () {
         return {
             memberName: '이름을 작성하세요',

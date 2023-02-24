@@ -8,6 +8,8 @@ import ComponentTest from "@/views/lecture/componentTest/ComponentTest.vue"
 
 import EmitTestBoardGame from "@/views/lecture/emitTest/EmitTestBoardGame.vue"
 
+import 
+
 Vue.use(VueRouter)
 
 const routes = [
