@@ -8,7 +8,8 @@
             :table-data="tableData"
             :current-turn-shape="currentTurnShape"
             @updateTurnShape="updateTurnShape"
-            @updateWinner="updateWinner"/>
+            @updateWinner="updateWinner"
+            @updateTableData="updateTableData"/>
             <!-- @updateTurnShape은 v-on:updateTurnShape와 동의어
                  updateTurnShape이라는 이벤트가 발생하면
                  updateTurnShape 매서드를 동작시키라는 의미
@@ -41,6 +42,9 @@ export default {
         updateWinner (receivedWinner) {
             console.log("Tr Component: winner received")
             this.$emit('updateWinner', receivedWinner)
+        },
+        updateTableData () {
+            this.$emit('updateTableData')
         }
     }
 }

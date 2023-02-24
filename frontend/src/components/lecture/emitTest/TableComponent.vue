@@ -7,7 +7,8 @@
             :table-data="tableData"
             :current-turn-shape="currentTurnShape"
             @updateTurnShape="updateTurnShape"
-            @updateWinner="updateWinner"/>
+            @updateWinner="updateWinner"
+            @updateTableData="updateTableData"/>
     </table>
 </template>
 
@@ -38,6 +39,9 @@ export default {
         updateWinner (receivedWinner) {
             console.log("Table Component: winner received")
             this.$emit('updateWinner', receivedWinner)
+        },
+        updateTableData () {
+            this.$emit('updateTableData')
         }
     }
 }

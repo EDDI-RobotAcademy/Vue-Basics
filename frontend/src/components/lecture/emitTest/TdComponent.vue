@@ -34,6 +34,7 @@ export default {
                 this.game.propsWinner = this.currentTurnShape
 
                 this.$emit('updateWinner', this.game.propsWinner)
+                this.$emit('updateTableData')
             }
 
             this.changeTurn()

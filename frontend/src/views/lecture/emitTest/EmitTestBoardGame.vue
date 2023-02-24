@@ -5,7 +5,8 @@
         :table-data="tableData"
         :current-turn-shape="currentTurnShape"
         @updateTurnShape="updateTurnShape"
-        @updateWinner="updateWinner"/>
+        @updateWinner="updateWinner"
+        @updateTableData="updateTableData"/>
     <div v-if="winner">{{ winner }} 님의 승리!</div>
   </v-container>
 </template>
@@ -46,6 +47,15 @@ export default {
         updateWinner (receivedWinner) {
             console.log("Main Board Game: winner received")
             this.winner = receivedWinner
+        },
+        updateTableData () {
+            this.tableData = [
+                ['', '', '', '', ''],
+                ['', '', '', '', ''],
+                ['', '', '', '', ''],
+                ['', '', '', '', ''],
+                ['', '', '', '', ''],
+            ]
         }
     }
 }
